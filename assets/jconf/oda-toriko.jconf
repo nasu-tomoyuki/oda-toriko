@@ -1,0 +1,9 @@
+-gram oda-toriko/menu
+-gram oda-toriko/basic-cancel
+-gram oda-toriko/basic-yes
+-gram oda-toriko/basic-finish-order
+-gram oda-toriko/basic-start-order
+-gram oda-toriko/basic-dummy
+-charconv EUC-JP UTF-8
+-input mic
+-demo

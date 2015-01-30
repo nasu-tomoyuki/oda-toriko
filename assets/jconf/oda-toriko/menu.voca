@@ -1,0 +1,69 @@
+% ITEM
+ハンバーグ			h a N b a: g u
+和風ハンバーグ		w a f u: h a N b a: g u
+チーズハンバーグ	ch i: z u h a N b a: g u
+サイコロステーキ	s a i k o r o s u t e: k i
+ヒレステーキ		h i r e s u t e: k i
+チキンステーキ		ch i k i N s u t e: k i
+とんかつ定食		t o N k a ts u t e i sh o k u
+ショートケーキ		sh o: t o k e: k i
+チーズケーキ		ch i: z u k e: k i
+オレンジジュース	o r e N j i j u: s u
+コーラ				k o: r a
+ウーロン茶			u: r o N ch a
+コーヒー			k o: h i:
+アイスコーヒー		a i s u k o: h i:
+ホットコーヒー		h o q t o k o: h i:
+
+% NUM
+1			i ch i
+2			n i
+3			s a N
+4			y o N
+5			g o
+6			r o k u
+7			n a n a
+8			h a ch i
+9			ky u:
+10			j u u
+1			h i t o ts u
+2			f u t a ts u
+3			m i q ts u
+4			y o q ts u
+5			i ts u ts u
+6			m u q ts u
+7			n a n a ts u
+8			y a q ts u
+9			k o k o n o ts u
+10			t o:
+1			i q k o
+2			n i k o
+3			s a N k o
+4			y o N k o
+5			g o k o
+6			r o q k o
+7			n a n a k o
+8			h a q k o
+8			h a ch i k o
+9			ky u: k o
+10			j u q k o
+
+% CANCEL
+CANCEL		ky a N s e r u
+CANCEL		t o r i k e sh i
+CANCEL		y a m e m a s u
+
+% YAHARI
+YAHARI		sp
+YAHARI		y a h a r i
+YAHARI		y a q p a r i
+
+% WO
+SPACE		o
+SPACE		g a
+SPACE		sp
+
+% NS_B
+silB		silB
+% NS_E
+silE		silE
