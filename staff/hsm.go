@@ -52,7 +52,10 @@ func (self *StaffHSM) CurrentStateID() string {
 
 func (self *StaffHSM) Update() bool {
 	if self.IsEnabledInput {
-		var recogout, _	= self.Julius.Input()
+		var recogout, err	= self.Julius.Input()
+		if err != nil {
+			return false
+		}
 		if recogout != nil {
 			fmt.Printf("Update: %+v\n", *recogout)
 			event := int(EventBase) + recogout.Shypo[0].Gram

@@ -35,7 +35,7 @@ func	NewVoice(sfxPath string, tmpPath string) *Voice {
 
 	fi, _ := os.Stat(tmpPath)
 	if nil == fi {
-		os.Mkdir(tmpPath, 0755)
+		os.Mkdir(tmpPath, 0777)
 	}
 	return &s
 }
@@ -56,7 +56,6 @@ func	(self *Voice)Say(text string) {
     }
     cmd.Run()
 
-    // aplay
     cmd = exec.Command(self.Player, outFile)
     cmd.Run()
 }

@@ -8,20 +8,19 @@ import (
 	"flag"
 	"fmt"
 	"github.com/nasu-tomoyuki/oda-toriko/julius"
-	"github.com/nasu-tomoyuki/oda-toriko/voice"
 	"github.com/nasu-tomoyuki/oda-toriko/staff"
+	"github.com/nasu-tomoyuki/oda-toriko/voice"
 )
 
-
 func main() {
-	addr		:= flag.String("addr", "localhost", "julius address")
-	port		:= flag.String("port", "10500", "julius port")
-	assetsPath	:= flag.String("assets", "./assets/", "assets path")
-	tmpPath		:= flag.String("tmp", "./tmp/", "tmp path")
+	addr := flag.String("addr", "localhost", "julius address")
+	port := flag.String("port", "10500", "julius port")
+	assetsPath := flag.String("assets", "./assets/", "assets path")
+	tmpPath := flag.String("tmp", "./tmp/", "tmp path")
 	flag.Parse()
 
-	v		:= voice.NewVoice(*assetsPath + "sfx/", *tmpPath)
-	j		:= julius.NewJulius()
+	v := voice.NewVoice(*assetsPath+"sfx/", *tmpPath)
+	j := julius.NewJulius()
 
 	if !j.Connect(*addr, *port) {
 		fmt.Printf("Failed to connect to %s:%s\n", *addr, *port)
@@ -33,6 +32,9 @@ func main() {
 	fmt.Println(staff.CurrentStateID())
 
 	for {
-		staff.Update()
+		ok := staff.Update()
+		if !ok {
+			break
+		}
 	}
 }

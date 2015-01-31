@@ -62,7 +62,6 @@ julius -C $GOPATH/src/github.com/nasu-tomoyuki/oda-toriko/assets/jconf/oda-torik
 ```
 
 ## 小田鳥子を起動
-
 ```
 ./build/oda-toriko
 ```
@@ -83,7 +82,7 @@ julius -C ./assets/jconf/oda-toriko.jconf -C ~/julius-kits/grammar-kit-v4.1/hmm_
 ## 注文の流れ
 1. 「注文いいですか？」「オーダーお願いします」などで店員を呼びます。
 1. メニューの中からアイテムを選びます。
-1.1. 「ハンバーグを１つ」のような感じで注文します。「３つ」のように数だけを言うと最後に注文した数量を変更します。「キャンセル」で最後の注文を取り消すことが出来ます。「ハンバーグをキャンセル」のようにアイテム名を言うことで、特定のアイテムを取り消すことが出来ます。
+ * 「ハンバーグを１つ」のような感じで注文します。「３つ」のように数だけを言うと最後に注文した数量を変更します。「キャンセル」で最後の注文を取り消すことが出来ます。「ハンバーグをキャンセル」のようにアイテム名を言うことで、特定のアイテムを取り消すことが出来ます。
 1. 「以上でお願いします」「それで」のような感じで注文を終えると、いままでの注文を読み上げます。よければ「はい」「それでお願いします」という感じで注文を確定します。
 
 ### メニュー
@@ -110,13 +109,15 @@ julius -C ./assets/jconf/oda-toriko.jconf -C ~/julius-kits/grammar-kit-v4.1/hmm_
 基本的には yum や apt-get では古いバージョンがインストールされるので、ソースからコンパイルします。
 
 ## Go 言語
-git がインストールされていない場合は apt-get などでインストールします。
+git がインストールされていない場合は apt-get などであらかじめインストールします。
 ```
-git clone https://go.googlesource.com/go
-cd go
-git checkout go1.4.1
-cd go/src
+git clone https://go.googlesource.com/go go1.4
+cd go1.4/src
 ./all.bash
+mkdir -p ~/go/src
+export GOPATH=$HOME/go
+export GOROOT=$HOME/go1.4
+export PATH=$PATH:$GOROOT/bin
 ```
 
 ## Julius
@@ -141,6 +142,12 @@ tar zxvf grammar-kit-v4.1
 mkdir -p ~/julius-kits
 mv grammar-kit-v4.1 ~/julius-kits
 ```
+
+#### Raspberry Pi に USB マイクを付けている場合
+```
+export ALSADEV="plughw:1,0"
+```
+PulseAudio をインストールすればこれは必要ないけれど、自分の環境では PulseAudio をインストールしていると aplay がときどき止まるのでアンインストールしています。
 
 ## Open JTalk
 Open JTalk は UTF-8 対応にコンパイルします。コンパイルには hts_engine が必要です。
